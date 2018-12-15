@@ -9,7 +9,11 @@ socket.on('join_room', function(msg) {
 });
 // createGame onclick - emit a message on the 'create' channel to
 // create a new game with default parameters
+$("#create_game").click(function(){
+  createGame()
+  $("#create_game").remove()
+})
 function createGame() {
   console.log('Creating game...');
-  socket.emit('create', {size: 'normal', teams: 2, dictionary: 'Simple'});
+  socket.emit('create', {user_id: '1'});
 }
