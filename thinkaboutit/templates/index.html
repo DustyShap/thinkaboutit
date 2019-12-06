@@ -13,6 +13,12 @@
   <div id='menu_container'>
     <p>Think About It</p>
       <button id='create_game' class='btn btn-lg btn-primary'>New Game</button>
+      {% if mobile %}
+       <p>Mobile View Detected</p>
+      {% else %}
+        <p>Desktop View Detected</p>
+      {% endif %}
+
   </div>
 
 
