@@ -1,10 +1,14 @@
-from flask import render_template, request
-from flask_socketio import SocketIO, join_room, emit
-from thinkaboutit import app
 import os
 
-app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
+from flask import render_template, request
+from flask_socketio import SocketIO, join_room, emit
+
+from models import db, User
+from create import create_app
+
+app = create_app()
 socketio = SocketIO(app)
+app.app_context().push()
 
 PHONES = ['android', 'blackberry', 'iphone']
 
